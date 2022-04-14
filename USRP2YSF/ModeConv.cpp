@@ -201,9 +201,10 @@ void CModeConv::putUSRPEOT()
 {
 	uint8_t vch[13];
 	::memset(vch, 0, sizeof(vch));
+	m_YSF.clear();
 	m_YSF.addData(&TAG_EOT, 1U);
 	m_YSF.addData(vch, 13U);
-	m_ysfN += 1U;
+	m_ysfN = 1U;
 }
 
 void CModeConv::putUSRP(int16_t* data)

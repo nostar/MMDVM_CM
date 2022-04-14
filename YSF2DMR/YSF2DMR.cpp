@@ -878,6 +878,7 @@ int CYSF2DMR::run()
 						m_netDst = (netflco == FLCO_GROUP ? "TG " : "") + m_lookup->findCS(DstId);
 
 						LogMessage("DMR audio late entry received from %s to %s", m_netSrc.c_str(), m_netDst.c_str());
+						m_conv.putDMRHeader();
 
 						if (m_lookup->exists(SrcId) && (m_APRS != NULL)) {
 							int lat, lon, resp;
